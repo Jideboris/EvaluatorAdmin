@@ -1,14 +1,14 @@
-import { AppPage } from './app.po';
+import { TodoAppPage } from './app.po';
 
-describe('evaluator-admin App', () => {
-  let page: AppPage;
+describe('todo-app App', () => {
+  let page: TodoAppPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    page = new TodoAppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });
