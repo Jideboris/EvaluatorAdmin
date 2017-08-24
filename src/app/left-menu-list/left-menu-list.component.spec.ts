@@ -3,16 +3,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { TodoListComponent } from './todo-list.component';
+import { LeftMenuListComponent } from './left-menu-list.component';
 import { Todo } from '../todo';
 
-describe('TodoListComponent', () => {
-  let component: TodoListComponent;
-  let fixture: ComponentFixture<TodoListComponent>;
+describe('LeftMenuListComponent', () => {
+  let component: LeftMenuListComponent;
+  let fixture: ComponentFixture<LeftMenuListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ],
+      declarations: [ LeftMenuListComponent ],
       schemas: [
         NO_ERRORS_SCHEMA
       ]
@@ -21,7 +21,7 @@ describe('TodoListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoListComponent);
+    fixture = TestBed.createComponent(LeftMenuListComponent);
     component = fixture.componentInstance;
     component.todos = [
      new Todo({ id: 1, title: 'Test', complete: false })

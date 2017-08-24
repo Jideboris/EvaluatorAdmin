@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Todo } from '../todo';
+import { LeftMenu } from '../leftmenu';
 
 @Component({
   selector: 'app-todo-list-footer',
@@ -9,7 +9,7 @@ import { Todo } from '../todo';
 export class TodoListFooterComponent {
 
   @Input()
-  todos: Todo[];
+  menus: LeftMenu[];
 
   constructor() {
   }

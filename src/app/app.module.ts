@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
+import { LeftMenuListComponent } from './left-menu-list/left-menu-list.component';
 import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
-import { TodoDataService } from './todo-data.service';
+import { TodoDataService } from './services/todo-data.service';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
-import { ApiService } from './api.service';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
+    LeftMenuListComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
     TodoListItemComponent

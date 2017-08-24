@@ -1,7 +1,7 @@
-export class Todo {
+export class LeftMenu {
   id: number;
-  title = '';
-  complete = false;
+  description = '';
+  active = false;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

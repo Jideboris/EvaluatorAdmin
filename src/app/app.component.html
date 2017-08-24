@@ -1,4 +1,4 @@
-<section class="todoapp">
+<!-- <section class="todoapp">
   <app-todo-list-header
     (add)="onAddTodo($event)"
   ></app-todo-list-header>
@@ -10,4 +10,24 @@
   <app-todo-list-footer
     [todos]="todos"
   ></app-todo-list-footer>
-</section>
+</section> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
+    </div>
+
+  </div>
+  <div class="row justify-content-start">
+    <div class="col-4">
+      <app-left-menu-list [menus]="menus"></app-left-menu-list>
+    </div>
+    <div class="col-8">col-8</div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-todo-list-footer [menus]="todos"></app-todo-list-footer>
+    </div>
+  </div>

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Http, Response } from '@angular/http';
-import { Todo } from './todo';
+import { LeftMenu } from '../leftmenu';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -17,39 +17,39 @@ export class ApiService {
   ) {
   }
 
-  public getAllTodos(): Observable<Todo[]> {
+  public getAllTodos(): Observable<LeftMenu[]> {
     return this.http
       .get(API_URL + '/todos')
       .map(response => {
         const todos = response.json();
-        return todos.map((todo) => new Todo(todo));
+        return todos.map((todo) => new LeftMenu(todo));
       })
       .catch(this.handleError);
   }
 
-  public createTodo(todo: Todo): Observable<Todo> {
+  public createTodo(todo: LeftMenu): Observable<LeftMenu> {
     return this.http
       .post(API_URL + '/todos', todo)
       .map(response => {
-        return new Todo(response.json());
+        return new LeftMenu(response.json());
       })
       .catch(this.handleError);
   }
 
-  public getTodoById(todoId: number): Observable<Todo> {
+  public getTodoById(todoId: number): Observable<LeftMenu> {
     return this.http
       .get(API_URL + '/todos/' + todoId)
       .map(response => {
-        return new Todo(response.json());
+        return new LeftMenu(response.json());
       })
       .catch(this.handleError);
   }
 
-  public updateTodo(todo: Todo): Observable<Todo> {
+  public updateTodo(todo: LeftMenu): Observable<LeftMenu> {
     return this.http
       .put(API_URL + '/todos/' + todo.id, todo)
       .map(response => {
-        return new Todo(response.json());
+        return new LeftMenu(response.json());
       })
       .catch(this.handleError);
   }

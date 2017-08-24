@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TodoListFooterComponent } from './todo-list-footer.component';
-import { Todo } from '../todo';
+import { LeftMenu } from '../leftmenu';
 
 describe('TodoListFooterComponent', () => {
   let component: TodoListFooterComponent;
@@ -20,8 +20,8 @@ describe('TodoListFooterComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TodoListFooterComponent);
     component = fixture.componentInstance;
-    component.todos = [
-      new Todo({ id: 1, title: 'Test', complete: false })
+    component.menus = [
+      new LeftMenu({ id: 1, description: 'Test', active: false })
     ];
     fixture.detectChanges();
   });

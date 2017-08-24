@@ -1,0 +1,7 @@
+<section class="main" *ngIf="menus.length > 0">
+  <ul class="todo-list">
+    <li *ngFor="let menu of menus" [class.active]="menu.active">
+     {{menu.description}}
+    </li>
+  </ul>
+</section>

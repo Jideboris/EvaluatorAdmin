@@ -3,9 +3,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TodoDataService } from './todo-data.service';
-import { ApiService } from './api.service';
-import { ApiMockService } from './api-mock.service';
+import { TodoDataService } from './services/todo-data.service';
+import { ApiService } from './services/api.service';
+import { ApiMockService } from './services/api-mock.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {

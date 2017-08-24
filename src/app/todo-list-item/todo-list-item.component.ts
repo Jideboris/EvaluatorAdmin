@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Todo } from '../todo';
+import { LeftMenu } from '../leftmenu';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -8,23 +8,23 @@ import { Todo } from '../todo';
 })
 export class TodoListItemComponent {
 
-  @Input() todo: Todo;
+  @Input() leftmenu: LeftMenu;
 
   @Output()
-  remove: EventEmitter<Todo> = new EventEmitter();
+  remove: EventEmitter<LeftMenu> = new EventEmitter();
 
   @Output()
-  toggleComplete: EventEmitter<Todo> = new EventEmitter();
+  toggleComplete: EventEmitter<LeftMenu> = new EventEmitter();
 
   constructor() {
   }
 
-  toggleTodoComplete(todo: Todo) {
-    this.toggleComplete.emit(todo);
+  toggleTodoComplete(leftmenu: LeftMenu) {
+    this.toggleComplete.emit(leftmenu);
   }
 
-  removeTodo(todo: Todo) {
-    this.remove.emit(todo);
+  removeTodo(leftmenu: LeftMenu) {
+    this.remove.emit(leftmenu);
   }
 
 }

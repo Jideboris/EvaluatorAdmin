@@ -67,7 +67,7 @@ body {
 	color: #e6e6e6;
 }
 
-.todoapp h1 {
+.todoapp h1,h3 {
 	position: absolute;
 	top: -155px;
 	width: 100%;
