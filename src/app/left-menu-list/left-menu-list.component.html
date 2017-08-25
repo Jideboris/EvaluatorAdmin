@@ -1,7 +1,7 @@
-<section class="main" *ngIf="menus.length > 0">
-  <ul class="todo-list">
+<div class="sidenav" *ngIf="menus.length > 0">
+  <ul>
     <li *ngFor="let menu of menus" [class.active]="menu.active">
-      <a class="btn btn-primary button" (click)="compute()">{{menu.description}}</a>
+      <a class="btn btn-primary" (click)="compute()">{{menu.description}}</a>
     </li>
   </ul>
-</section>
+</div>

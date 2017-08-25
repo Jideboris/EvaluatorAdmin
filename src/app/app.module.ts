@@ -10,6 +10,7 @@ import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.com
 import { TodoDataService } from './services/todo-data.service';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { ApiService } from './services/api.service';
+import { ContentItemComponent } from './content-item/content-item/content-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ApiService } from './services/api.service';
     LeftMenuListComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
-    TodoListItemComponent
+    TodoListItemComponent,
+    ContentItemComponent
   ],
   imports: [
     BrowserModule,

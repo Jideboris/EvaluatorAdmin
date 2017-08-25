@@ -13,22 +13,25 @@
 </section> -->
 
 <div class="container-fluid">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-12">
       <app-todo-list-header (add)="onAddTodo($event)"></app-todo-list-header>
     </div>
 
-  </div>
+  </div> -->
   <div class="row">
-    <div class="col-4" style="border:1px solid red">
+
+    <div class="col">
       <app-left-menu-list [menus]="menus"></app-left-menu-list>
     </div>
-    <div class="col-8">col-8</div>
+    <div class="col">
+       <app-content-item></app-content-item>
+    </div>
 
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-12">
       <app-todo-list-footer [menus]="todos"></app-todo-list-footer>
     </div>
-  </div>
+  </div> -->
 </div>
