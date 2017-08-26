@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LeftMenu } from '../leftmenu';
+import { LeftMenu } from '../objects/leftmenu';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 

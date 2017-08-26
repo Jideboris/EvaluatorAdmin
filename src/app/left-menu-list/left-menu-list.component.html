@@ -1,8 +1,6 @@
 <div class="sidenav" *ngIf="menus.length > 0">
-  <ul>
-    <li *ngFor="let menu of menus" [class.active]="menu.active">
-      <!-- <a class="btn btn-primary" (click)="compute()"></a> -->
-      <a routerLink="/location" class="btn btn-primary" routerLinkActive="active">{{menu.description}}</a>
-    </li>
-  </ul>
+  <div *ngFor="let menu of menus" class="menu">
+    <!-- <a class="btn btn-primary" (click)="compute()"></a> -->
+    <a routerLink="/location" class="btn btn-primary" routerLinkActive="active">{{menu.description}}</a>
+  </div>
 </div>

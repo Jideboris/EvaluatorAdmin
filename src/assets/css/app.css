@@ -3,32 +3,10 @@ body {
 	margin: 0;
 	padding: 0;
 }
-/* ul li {
-    position: relative;
-    display: block;
-   
-    margin-top: 10px;
-    border: 1px solid #cccccc;
-    border-bottom: 2px #989898 solid;
-    background: #fff ;
-} */
-/* button {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	background: none;
-	font-size: 100%;
-	vertical-align: baseline;
-	font-family: inherit;
-	font-weight: inherit;
-	color: inherit;
-	-webkit-appearance: none;
-	appearance: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	
-} */
-
+.menu{
+    margin:0 5px;
+}
+ 
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
@@ -52,11 +30,24 @@ body {
 }
 .contentside {
     height: 100%; /* 100% Full-height */
-	padding-top: 10px; /* Place content 60px from the top */
-	background-color: red; /* Black*/
-    
+	margin-top: 10px; /* Place content 60px from the top */
 }
-    
+.contentside .subscriptionForm {
+    -moz-background-clip: padding;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 0 0 10px #b4b4b4;
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px #b4b4b4;
+    background-clip: padding-box;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #b4b4b4;
+    /*margin: 40px 40px 0px 80px;*/
+    margin-bottom: 200px;
+    padding: 25px 40px;
+    width: 100%;
+}
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
@@ -64,8 +55,8 @@ body {
     position: fixed; /* Stay in place */
     /* z-index: 1; Stay on top */
     top: 0;
-    left:1;
-    background-color: #111; /* Black*/
+    left:0;
+    background-color: #f1f1f1;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 10px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -76,7 +67,7 @@ body {
     /* padding: 8px 8px 8px 32px; */
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color:black;
     display: block;
     transition: 0.3s
 }
@@ -99,7 +90,16 @@ body {
     margin-left: 50px;
 }
  
-
+.main{
+   padding-top: 10%;
+    width: 50%;
+    margin:auto;
+}
+.form_login {
+    margin:auto;
+    vertical-align: middle;
+    width: 40%;
+ }
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DataService } from "../services/data.service";
 
 @Component({
   selector: 'app-admin-login',
@@ -7,18 +8,24 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AdminLoginComponent {
   @Input()
-  email: string
+  username: string
   password: string
 
 
 
-  constructor() {
+  constructor(private dataService: DataService) {
 
   }
 
   processSignIn() {
-    console.log(this.email)
-    console.log(this.password)
+    var data = { username: this.username, password: this.password }
+    this.dataService
+      .loginUserIn(data)
+      .subscribe(
+      (newTodo) => {
+        console.log('here')
+      }
+      );
   }
 
 }

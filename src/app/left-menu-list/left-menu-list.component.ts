@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { LeftMenu } from '../leftmenu';
+import { LeftMenu } from '../objects/leftmenu';
 
 @Component(
   {

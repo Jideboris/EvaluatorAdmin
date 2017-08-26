@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { LeftMenuListComponent } from './left-menu-list.component';
-import { LeftMenu } from '../LeftMenu';
+import { LeftMenu } from '../objects/LeftMenu';
 
 describe('LeftMenuListComponent', () => {
   let component: LeftMenuListComponent;

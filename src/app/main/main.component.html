@@ -1,0 +1,10 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <app-left-menu-list [menus]="menus"></app-left-menu-list>
+    </div>
+    <div class="col-9">
+      <router-outlet name="main"></router-outlet>
+    </div>
+  </div>
+</div>

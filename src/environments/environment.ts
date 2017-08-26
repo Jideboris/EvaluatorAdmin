@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://evaluatorapi.herokuapp.com/api/v1',
+  apiLoginUrl:'https://evaluatorapi.herokuapp.com'
 };

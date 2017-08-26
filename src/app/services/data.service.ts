@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { LeftMenu } from '../leftmenu';
+import { LeftMenu } from '../objects/leftmenu';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs/Observable';
+import { Admincontent } from "../objects/admincontent";
 
 @Injectable()
-export class TodoDataService {
+export class DataService {
 
   constructor(
     private api: ApiService
@@ -25,10 +26,14 @@ export class TodoDataService {
   updateTodo(todo: LeftMenu): Observable<LeftMenu> {
     return this.api.updateTodo(todo);
   }
-
+  //login in administrator
+  loginUserIn(data: object) {
+    console.log('here1')
+    return this.api.loginUserIn(data);
+  }
   // Simulate GET /todos
-  getAllTodos(): Observable<LeftMenu[]> {
-    return this.api.getAllTodos();
+  getAllLocations(): Observable<Admincontent[]> {
+    return this.api.getAllLocations();
   }
 
   // Simulate GET /todos/:id

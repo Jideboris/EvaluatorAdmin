@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LeftMenu } from '../leftmenu';
+import { LeftMenu } from '../objects/leftmenu';
 
 @Component({
   selector: 'app-todo-list-footer',

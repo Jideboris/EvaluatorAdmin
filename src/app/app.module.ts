@@ -8,23 +8,31 @@ import { AppComponent } from './app.component';
 import { LeftMenuListComponent } from './left-menu-list/left-menu-list.component';
 import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
 import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
-import { TodoDataService } from './services/todo-data.service';
+import { DataService } from './services/data.service';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { ApiService } from './services/api.service';
 import { LocationItemComponent } from './location-item/location-item.component';
+import { OrderbypipePipe } from './location-item/orderbypipe.pipe';
+import { AdminLoginComponent } from "./admin-login/admin-login.component";
+import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
-  { path: 'location', component: LocationItemComponent } 
+  { path: '', component: AdminLoginComponent,outlet: 'login' },
+  { path: 'location', component: LocationItemComponent }
+  
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftMenuListComponent,
+    AdminLoginComponent,
     TodoListFooterComponent,
     TodoListHeaderComponent,
     TodoListItemComponent,
-    LocationItemComponent
+    LocationItemComponent,
+    OrderbypipePipe,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [TodoDataService, ApiService],
+  providers: [DataService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

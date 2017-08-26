@@ -1,37 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoDataService } from './services/todo-data.service';
-import { LeftMenu } from './leftmenu';
+import { DataService } from './services/data.service';
+import { LeftMenu } from './objects/leftmenu';
+import { Admincontent } from "./objects/admincontent";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [TodoDataService]
+  providers: [DataService]
 })
 export class AppComponent implements OnInit {
 
   menus: LeftMenu[] = [];
+  locations: Admincontent[] = [];
 
   constructor(
-    private todoDataService: TodoDataService
+    private dataService: DataService
   ) {
   }
 
   public ngOnInit() {
 
-    this.menus = this.menus.concat({id:1,description:'Location',active:false});
-    console.log(this.menus)
-    // this.todoDataService
-    //   .getAllTodos()
-    //   .subscribe(
-    //     (todos) => {
-    //       this.menus = todos;
-    //     }
-    //   );
+    this.menus = this.menus.concat({ id: 1, description: 'Locations', active: false });
+    
+    
   }
 
   onAddTodo(todo) {
-    this.todoDataService
+    this.dataService
       .addTodo(todo)
       .subscribe(
       (newTodo) => {
@@ -41,7 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   onToggleTodoComplete(todo) {
-    this.todoDataService
+    this.dataService
       .toggleTodoComplete(todo)
       .subscribe(
       (updatedTodo) => {
@@ -51,7 +47,7 @@ export class AppComponent implements OnInit {
   }
 
   onRemoveTodo(todo) {
-    this.todoDataService
+    this.dataService
       .deleteTodoById(todo.id)
       .subscribe(
       (_) => {
