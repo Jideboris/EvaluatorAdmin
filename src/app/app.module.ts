@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LeftMenuListComponent } from './left-menu-list/left-menu-list.component';
@@ -10,7 +11,11 @@ import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.com
 import { TodoDataService } from './services/todo-data.service';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { ApiService } from './services/api.service';
-import { ContentItemComponent } from './content-item/content-item/content-item.component';
+import { LocationItemComponent } from './location-item/location-item.component';
+
+const appRoutes: Routes = [
+  { path: 'location', component: LocationItemComponent } 
+]
 
 @NgModule({
   declarations: [
@@ -19,12 +24,16 @@ import { ContentItemComponent } from './content-item/content-item/content-item.c
     TodoListFooterComponent,
     TodoListHeaderComponent,
     TodoListItemComponent,
-    ContentItemComponent
+    LocationItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [TodoDataService, ApiService],
   bootstrap: [AppComponent]

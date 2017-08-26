@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { LeftMenuListComponent } from './left-menu-list.component';
-import { Todo } from '../todo';
+import { LeftMenu } from '../LeftMenu';
 
 describe('LeftMenuListComponent', () => {
   let component: LeftMenuListComponent;
@@ -23,9 +23,7 @@ describe('LeftMenuListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LeftMenuListComponent);
     component = fixture.componentInstance;
-    component.todos = [
-     new Todo({ id: 1, title: 'Test', complete: false })
-    ];
+  
     fixture.detectChanges();
   });
 
