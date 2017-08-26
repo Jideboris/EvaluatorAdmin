@@ -28,7 +28,6 @@ export class DataService {
   }
   //login in administrator
   loginUserIn(data: object) {
-    console.log('here1')
     return this.api.loginUserIn(data);
   }
   // Simulate GET /todos

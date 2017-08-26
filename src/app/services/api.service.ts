@@ -21,7 +21,6 @@ export class ApiService {
   }
   public loginUserIn(data) {
     let assign = new FormData();
-    console.log('here2')
     assign.append('username', data.username);
     assign.append('password', data.password);
     assign.append('category', 'admin');
@@ -35,11 +34,11 @@ export class ApiService {
       .post(LOGIN_URL + '/login', assign, options)
       .map(response => {
         const login = response.json();
-        console.log(login)
-        return login.map((location) => new Admincontent());
+        return login;
       })
       .catch(this.handleError);
   }
+
   public getAllLocations(): Observable<Admincontent[]> {
     return this.http
       .get(API_URL + '/locations')
@@ -88,5 +87,13 @@ export class ApiService {
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
+  }
+  private storedata(token, user, contype) {
+    if (token) {
+      localStorage.setItem('X-Access-Token', token);
+      localStorage.setItem('X-Key', user);
+      localStorage.setItem('Cat', 'admin');
+      localStorage.setItem('Content-Type', 'application/json');
+    }
   }
 }

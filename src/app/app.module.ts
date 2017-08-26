@@ -17,9 +17,9 @@ import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { MainComponent } from './main/main.component';
 
 const appRoutes: Routes = [
-  { path: '', component: AdminLoginComponent,outlet: 'login' },
-  { path: 'location', component: LocationItemComponent }
-  
+  { path: '', component: AdminLoginComponent, outlet: 'login' },
+  { path: 'location', component: LocationItemComponent, outlet: 'main' }
+
 ]
 
 @NgModule({
