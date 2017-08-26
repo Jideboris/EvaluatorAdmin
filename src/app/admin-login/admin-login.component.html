@@ -1,0 +1,35 @@
+<div class="center-vertical mx-auto">
+    <form method="post" action="" class=p-3>
+        <h3 class="content-box-header content-box-header-alt bg-default">
+        
+            <span class="header-wrapper">
+                            <small>Evaluator Administrator</small>
+                        </span>
+
+          </h3>
+          <div class="content-box-wrapper">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="email" class="form-control" [(ngModel)]="email" name="userpassword" placeholder="Enter email">
+
+                <span class="input-group-addon bg-blue">
+                                    <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+                                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <input type="password" class="form-control" [(ngModel)]="password" name="userpassword" placeholder="Password">
+                <span class="input-group-addon bg-blue">
+                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <a href="#recovery" title="Recover password">Forgot Your Password?</a>
+            </div>
+            <button class="btn btn-success" (click)="processSignIn()">Sign In</button>
+          </div>
+     
+      </form>
+</div>
