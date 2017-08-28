@@ -26,10 +26,7 @@ export class DataService {
   updateTodo(todo: LeftMenu): Observable<LeftMenu> {
     return this.api.updateTodo(todo);
   }
-  //login in administrator
-  loginUserIn(data: object) {
-    return this.api.loginUserIn(data);
-  }
+ 
   // Simulate GET /todos
   getAllLocations(): Observable<Admincontent[]> {
     return this.api.getAllLocations();

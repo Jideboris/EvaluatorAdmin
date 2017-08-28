@@ -19,26 +19,7 @@ export class ApiService {
 
   constructor(private http: Http) {
   }
-  public loginUserIn(data) {
-    let assign = new FormData();
-    assign.append('username', data.username);
-    assign.append('password', data.password);
-    assign.append('category', 'admin');
-
-    let heads = new Headers();
-    heads.append('Content-Type', undefined);
-
-    let options = new RequestOptions({ headers: heads });
-
-    return this.http
-      .post(LOGIN_URL + '/login', assign, options)
-      .map(response => {
-        const login = response.json();
-        return login;
-      })
-      .catch(this.handleError);
-  }
-
+ 
   public getAllLocations(): Observable<Admincontent[]> {
     return this.http
       .get(API_URL + '/locations')
@@ -88,12 +69,5 @@ export class ApiService {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
   }
-  private storedata(token, user, contype) {
-    if (token) {
-      localStorage.setItem('X-Access-Token', token);
-      localStorage.setItem('X-Key', user);
-      localStorage.setItem('Cat', 'admin');
-      localStorage.setItem('Content-Type', 'application/json');
-    }
-  }
+  
 }

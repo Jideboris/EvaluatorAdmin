@@ -15,6 +15,8 @@ import { LocationItemComponent } from './location-item/location-item.component';
 import { OrderbypipePipe } from './location-item/orderbypipe.pipe';
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { MainComponent } from './main/main.component';
+import { AuthserviceService } from "./services/authservice.service";
+import { AuthenticateService } from "./services/authenticate.service";
 
 const appRoutes: Routes = [
   { path: '', component: AdminLoginComponent, outlet: 'login' },
@@ -43,7 +45,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [DataService, ApiService],
+  providers: [DataService, ApiService,AuthserviceService,AuthenticateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
