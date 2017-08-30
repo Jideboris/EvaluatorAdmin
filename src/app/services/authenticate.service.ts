@@ -4,7 +4,7 @@ import { AuthserviceService } from "../services/authservice.service";
 @Injectable()
 export class AuthenticateService implements CanActivate {
 
-  constructor(private router: Router, private authenticate: AuthserviceService) { }
+  constructor(private router: Router, private authservice: AuthserviceService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
@@ -13,13 +13,13 @@ export class AuthenticateService implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
-    if (this.authenticate.isLoggedIn) { return true; }
+    if (this.authservice.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting
-    this.authenticate.redirectUrl = url;
+    this.authservice.redirectUrl = url;
 
     // Navigate to the login page with extras
-    this.router.navigate(['/login']);
+   // this.router.navigate(['/location']);
     return false;
   }
 }

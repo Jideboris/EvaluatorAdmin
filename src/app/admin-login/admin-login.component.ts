@@ -1,17 +1,18 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthserviceService } from "../services/authservice.service";
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
+
   @Input()
   username: string
   password: string
 
-  constructor(private authservice: AuthserviceService) {
+  constructor(private router: Router, private authservice: AuthserviceService) {
 
   }
 
@@ -21,9 +22,12 @@ export class AdminLoginComponent {
       .login(data)
       .subscribe(
       (newTodo) => {
-        console.log('here')
+        console.log(newTodo)
+        this.router.navigate(['/', { outlets: { main: 'location' } }])
       }
       );
+
+   
   }
 
 }

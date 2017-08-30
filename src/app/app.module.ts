@@ -19,7 +19,7 @@ import { AuthserviceService } from "./services/authservice.service";
 import { AuthenticateService } from "./services/authenticate.service";
 
 const appRoutes: Routes = [
-  { path: '', component: AdminLoginComponent, outlet: 'login' },
+  { path: '',  component: AdminLoginComponent, outlet: 'login' , pathMatch: 'full'},
   { path: 'location', component: LocationItemComponent, outlet: 'main' }
 
 ]
@@ -45,7 +45,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [DataService, ApiService,AuthserviceService,AuthenticateService],
+  providers: [DataService, ApiService, AuthserviceService, AuthenticateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

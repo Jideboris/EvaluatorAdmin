@@ -12,9 +12,7 @@ export class LocationItemComponent implements OnInit {
 
   @Input() locations: Admincontent[];
 
-  constructor(
-    private dataService: DataService
-  ) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
