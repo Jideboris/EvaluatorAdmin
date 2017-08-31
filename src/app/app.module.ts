@@ -18,12 +18,16 @@ import { MainComponent } from './main/main.component';
 import { AuthserviceService } from "./services/authservice.service";
 import { AuthenticateService } from "./services/authenticate.service";
 
-const appRoutes: Routes = [
-  { path: '',  component: AdminLoginComponent, outlet: 'login' , pathMatch: 'full'},
-  { path: 'location', component: LocationItemComponent, outlet: 'main' }
-
+const adminRoutes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: AdminLoginComponent },
+  {
+    path: 'admin', component: MainComponent, children: [
+      { path: 'location', component: LocationItemComponent, outlet: 'main' },
+      { path: 'left', component: LeftMenuListComponent, outlet: 'leftmenus' }
+    ]
+  },
 ]
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,10 +44,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    RouterModule.forRoot(adminRoutes)
   ],
   providers: [DataService, ApiService, AuthserviceService, AuthenticateService],
   bootstrap: [AppComponent]

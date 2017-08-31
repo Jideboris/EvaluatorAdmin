@@ -31,8 +31,9 @@ body {
 .contentside {
     height: 100%; /* 100% Full-height */
 	margin-top: 10px; /* Place content 60px from the top */
+	
 }
-.contentside .subscriptionForm {
+.row .subscriptionForm {
     -moz-background-clip: padding;
     -moz-border-radius: 10px;
     -moz-box-shadow: 0 0 10px #b4b4b4;
@@ -43,7 +44,7 @@ body {
     background-color: #FFF;
     border-radius: 10px;
     box-shadow: 0px 0px 10px #b4b4b4;
-    /*margin: 40px 40px 0px 80px;*/
+	margin-top: 10px; 
     margin-bottom: 200px;
     padding: 25px 40px;
     width: 100%;
@@ -91,7 +92,7 @@ body {
 }
  
 .main{
-   padding-top: 10%;
+   /* padding-top: 10%; */
     width: 50%;
     margin:auto;
 }

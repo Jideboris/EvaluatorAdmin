@@ -11,11 +11,12 @@ import { LeftMenu } from '../objects/leftmenu';
 export class LeftMenuListComponent {
 
   @Input()
-  menus: LeftMenu[];
+  menus: LeftMenu[] = [];
 
 
   constructor() {
-   
+    console.log('leftmenu')
+    this.menus = this.menus.concat({ id: 1, description: 'Locations', active: false });
   }
 
 }

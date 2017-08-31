@@ -13,7 +13,7 @@ export class AdminLoginComponent {
   password: string
 
   constructor(private router: Router, private authservice: AuthserviceService) {
-
+   
   }
 
   processSignIn() {
@@ -23,11 +23,11 @@ export class AdminLoginComponent {
       .subscribe(
       (newTodo) => {
         console.log(newTodo)
-        this.router.navigate(['/', { outlets: { main: 'location' } }])
+        this.router.navigate(['/admin', { outlets: { main: ['location'], leftmenus: ['left'] } }])
       }
       );
 
-   
+
   }
 
 }

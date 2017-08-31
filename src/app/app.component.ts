@@ -21,8 +21,6 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() {
 
-    this.menus = this.menus.concat({ id: 1, description: 'Locations', active: false });
-    
     
   }
 
