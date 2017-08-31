@@ -49,7 +49,7 @@ export class AuthserviceService {
   private storeData(login) {
     if (login.token) {
       localStorage.setItem('X-Access-Token', login.token);
-      localStorage.setItem('X-Key', login.user);
+      localStorage.setItem('X-Key', login.user.username);
       localStorage.setItem('Cat', 'admin');
       localStorage.setItem('Content-Type', 'application/json');
       localStorage.setItem('isloggedin', 'true');

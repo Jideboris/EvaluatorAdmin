@@ -90,11 +90,16 @@ body {
     font-size: 36px;
     margin-left: 50px;
 }
- 
+.main-login{
+    padding-top: 10%;
+     width: 50%;
+     margin:auto;
+ }
 .main{
    /* padding-top: 10%; */
     width: 50%;
     margin:auto;
+    position: fixed;
 }
 .form_login {
     margin:auto;

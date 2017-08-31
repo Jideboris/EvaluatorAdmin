@@ -15,18 +15,35 @@ const LOGIN_URL = environment.apiLoginUrl;
 @Injectable()
 export class ApiService {
 
-
-
   constructor(private http: Http) {
+
   }
- 
+  createAuthorizationHeader(): RequestOptions {
+    let heads = new Headers();
+    let logToken = localStorage.getItem('X-Access-Token');
+    let logUser = localStorage.getItem('X-Key');
+    let logCategory = localStorage.getItem('Cat');
+    let contentType = localStorage.getItem('Content-Type');
+
+    heads.append('Content-Type', contentType);
+    heads.append('cat', logCategory);
+    heads.append('x-key', logUser);
+    heads.append('x-access-token', logToken);
+
+
+    let options = new RequestOptions({ headers: heads });
+
+    return options;
+  }
   public getAllLocations(): Observable<Admincontent[]> {
+    let options = this.createAuthorizationHeader();
+
     return this.http
-      .get(API_URL + '/locations')
+      .get(API_URL + '/locations', options)
       .map(response => {
         const locations = response.json();
         console.log(locations)
-        return locations.map((location) => new Admincontent());
+        return locations.map((location) => { return location });
       })
       .catch(this.handleError);
   }
@@ -69,5 +86,5 @@ export class ApiService {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
   }
-  
+
 }

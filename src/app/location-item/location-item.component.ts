@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Admincontent } from "../objects/admincontent";
 import { DataService } from "../services/data.service";
+ 
 
 @Component({
   selector: 'app-content-item',
@@ -13,6 +14,7 @@ export class LocationItemComponent implements OnInit {
   @Input() locations: Admincontent[];
 
   constructor(private dataService: DataService) {
+   
   }
 
   ngOnInit() {

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 import { AuthserviceService } from "../services/authservice.service";
+
 @Injectable()
 export class AuthenticateService implements CanActivate {
 
@@ -8,7 +9,6 @@ export class AuthenticateService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url: string = state.url;
-
     return this.checkLogin(url);
   }
 
@@ -19,7 +19,7 @@ export class AuthenticateService implements CanActivate {
     this.authservice.redirectUrl = url;
 
     // Navigate to the login page with extras
-   // this.router.navigate(['/location']);
+    // this.router.navigate(['/location']);
     return false;
   }
 }

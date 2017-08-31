@@ -22,7 +22,7 @@ const adminRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: AdminLoginComponent },
   {
-    path: 'admin', component: MainComponent, children: [
+    path: 'admin', component: MainComponent, canActivate: [AuthenticateService], children: [
       { path: 'location', component: LocationItemComponent, outlet: 'main' },
       { path: 'left', component: LeftMenuListComponent, outlet: 'leftmenus' }
     ]

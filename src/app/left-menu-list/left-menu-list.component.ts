@@ -15,7 +15,6 @@ export class LeftMenuListComponent {
 
 
   constructor() {
-    console.log('leftmenu')
     this.menus = this.menus.concat({ id: 1, description: 'Locations', active: false });
   }
 

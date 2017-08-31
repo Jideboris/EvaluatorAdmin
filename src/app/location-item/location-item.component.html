@@ -12,7 +12,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let model of locations | orderbypipe : model: description">
+                        <tr *ngFor="let model of locations | orderbypipe : 'description'">
                             <td> {{$index + 1}}.</td>
                             <td>{{model.description}}</td>
 
