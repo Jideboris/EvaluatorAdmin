@@ -24,8 +24,8 @@ export class AuthserviceService {
     assign.append('category', 'admin');
 
     let heads = new Headers();
-    heads.append('Content-Type', undefined);
-
+    heads.append('Access-Control-Allow-Headers', 'Content-Type');
+    heads.append('Access-Control-Allow-Origin', '*');
     let options = new RequestOptions({ headers: heads });
 
     return this.http

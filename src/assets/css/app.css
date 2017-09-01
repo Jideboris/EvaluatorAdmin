@@ -102,6 +102,7 @@ body {
     position: fixed;
 }
 .form_login {
+    padding-top: 10%;
     margin:auto;
     vertical-align: middle;
     width: 40%;
