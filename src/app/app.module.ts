@@ -17,16 +17,19 @@ import { AdminLoginComponent } from "./admin-login/admin-login.component";
 import { MainComponent } from './main/main.component';
 import { AuthserviceService } from "./services/authservice.service";
 import { AuthenticateService } from "./services/authenticate.service";
+import { AddLocationComponent } from './location-item/add-location/add-location.component';
 
 const adminRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: AdminLoginComponent },
+  { path: 'login', component: AdminLoginComponent,canActivate: [AuthenticateService],},
   {
     path: 'admin', component: MainComponent, canActivate: [AuthenticateService], children: [
       { path: 'location', component: LocationItemComponent, outlet: 'main' },
+      { path: 'addlocation', component: AddLocationComponent, outlet: 'main' },
       { path: 'left', component: LeftMenuListComponent, outlet: 'leftmenus' }
     ]
   },
+  
 ]
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ const adminRoutes: Routes = [
     TodoListItemComponent,
     LocationItemComponent,
     OrderbypipePipe,
-    MainComponent
+    MainComponent,
+    AddLocationComponent
   ],
   imports: [
     BrowserModule,

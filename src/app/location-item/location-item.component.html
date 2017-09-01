@@ -30,9 +30,7 @@
         </div>
 
         <div class="form-group text-center">
-            <a href="#addlocation" class="btn btn-primary active">Add Location</a>
+            <a  [routerLink]="['/admin', {outlets: {'main': ['addlocation'], 'leftmenus': ['left']}}]" class="btn btn-primary active">Add Location</a>
         </div>
-
-
     </form>
 </div>

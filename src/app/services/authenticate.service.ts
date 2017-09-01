@@ -13,6 +13,9 @@ export class AuthenticateService implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
+    console.log('here')
+    console.log(url)
+   // this.router.navigateByUrl(url);
     if (this.authservice.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting

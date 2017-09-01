@@ -1,0 +1,30 @@
+<div class="row">
+  <form class="subscriptionForm" role="form">
+    <div class="col-12">
+      <div class="row">
+        <h4><b class="headers">Add/Edit Location Template</b></h4>
+      </div>
+      <br/>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-2">
+          <label class="control-label" for="discription">Description:</label>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="discription" value="{{locationdescription}}">
+        </div>
+
+      </div>
+      <br/>
+    </div>
+    <div class="col-12">
+      <div class="align-middle">
+        <button type="submit" ng-click="addLocation()" class="btn btn-primary">Save</button>
+        <a href="#admin_main" class="btn btn-primary active">Back</a>
+      </div>
+
+    </div>
+  </form>
+
+</div>
